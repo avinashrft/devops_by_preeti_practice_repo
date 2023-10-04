@@ -32,5 +32,19 @@ pipeline
                echo "Packing the code version ${params.APPVERSION}"
             }
         }
+        stage('Deploy')
+        {
+            input{
+                message: select the version to Package
+                ok "Version selected"
+                parameters{
+                    choice(name: 'NEWVERSION', choices: ['3','4','5'])
+                }
+            }
+            step{
+                echo "Package the code"
+                echo "Packing the code version ${params.APPVERSION}"
+            }
+        }
     }
 }
