@@ -36,7 +36,7 @@ pipeline
         {
             input{
                 message "select the version to Package"
-                ok "Version selected"
+                ok "Click to select"
                 parameters{
                     choice(name: 'NEWVERSION', choices:['3','4','5'])
                 }
