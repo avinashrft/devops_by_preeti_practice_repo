@@ -41,7 +41,7 @@ pipeline
                     choice(name: 'NEWVERSION', choices: ['3','4','5'])
                 }
             }
-            step{
+            steps{
                 echo "Package the code"
                 echo "Packing the code version ${params.APPVERSION}"
             }
