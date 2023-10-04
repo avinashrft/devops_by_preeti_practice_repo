@@ -43,7 +43,7 @@ pipeline
             }
             steps{
                 echo "Package the code"
-                echo "Packing the code version ${params.APPVERSION}"
+                echo "Packing the code version ${params.NEWVERSION}"
             }
         }
     }
