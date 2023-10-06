@@ -27,8 +27,7 @@ pipeline
                echo "Run the unitTest cases"
             }
         }
-        stage('Package')
-        {
+        stage('Package'){
             agent {label 'linux_slave'}
             steps{
                echo "Packging the code"
