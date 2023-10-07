@@ -29,10 +29,12 @@ pipeline{
         }
         stage('Package'){
             steps{
-                sshagent(['slave-node-02-private-key'])   //This is the plugin used to login to the slave node-02
-                    echo "Package the code...."
-                    sh "scp -o StrictHostKeyChecking=no server-config.sh ${DEV_SERVER}:/home/ec2-user"
-                    sh "ssh -o StrictHostkeyChecking=no ${DEV_SERVER} 'bash ~/server-config.sh'"
+                script
+                {
+                   sshagent(['slave-node-02-private-key'])   //This is the plugin used to login to the slave node-02
+                       echo "Package the code...."
+                       sh "scp -o StrictHostKeyChecking=no server-config.sh ${DEV_SERVER}:/home/ec2-user"
+                       sh "ssh -o StrictHostkeyChecking=no ${DEV_SERVER} 'bash ~/server-config.sh'"
                 }
             }
         }
